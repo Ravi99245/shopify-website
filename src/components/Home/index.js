@@ -1,5 +1,6 @@
 import Header from "../Header";
 import SecondPage from "../SecondPage/index";
+import ThirdPage from "../ThirdPage/index";
 import { FaPlay } from "react-icons/fa";
 
 import {

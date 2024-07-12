@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export const Globe = styled.img`
   width: 40%;
@@ -86,4 +88,75 @@ export const Heading = styled.h1`
   text-align: left;
   font-size: 3rem;
   width: 80%;
+`;
+
+export const AnchorElement = styled.a`
+  width: 150px;
+  height: 230px;
+  box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px;
+  text-decoration: none;
+  padding-bottom: 16px;
+`;
+
+export const LinksContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Enterprise = styled.h1`
+  color: #000;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin: 0px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+`;
+
+export const SmallImage = styled.img`
+  margin-bottom: 1.75rem;
+  border-radius: 9999px;
+  width: 3.5rem;
+  height: 3.5rem;
+`;
+
+export const Paragraph = styled.p`
+  color: rgb(82 82 91 / var(--tw-text-opacity));
+  font-size: 0%.75;
+  line-height: 1.5;
+  color: #576061;
+  text-align: left;
+  margin: 0px;
+`;
+
+export const AnchorContainer = styled.div`
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 3rem;
+`;
+
+export const Explore = styled.div`
+  width: 85%;
+  display: flex;
+  align-items: flex-start;
+  margin: 0 3rem;
+`;
+
+export const ExploreHeading = styled.h1`
+  font-size: 1.125rem;
+  color: #1a3639;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 3rem;
 `;
