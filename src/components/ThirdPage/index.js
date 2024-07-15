@@ -1,23 +1,49 @@
-import { Section, Video } from "./styledComponent";
+import { Component } from "react";
 
-const ThirdPage = () => {
-  return (
-    <Section>
-      <Video
-        id="wistia_simple_video_319"
-        crossorigin="anonymous"
-        poster="https://fast.wistia.com/assets/images/blank.gif"
-        aria-label="A mouse moves across an interactive store builder interface, rearranging sections and editing an online snowboard store."
-        src="https://www.shopify.com/6400e2bd-dccf-4449-b64b-801276699c3a"
-        controlslist="nodownload"
-        playsinline=""
-        muted="muted"
-        preload="auto"
-        type="video/m3u8"
-        x-webkit-airplay="allow"
-      ></Video>
-    </Section>
-  );
-};
+import { Section, GradientDiv, Button, ProgressBars } from "./styledComponent";
+
+class ThirdPage extends Component {
+  state = {
+    bars: [
+      { id: 1, filling: true },
+      { id: 2, filling: false },
+      { id: 3, filling: false },
+    ],
+  };
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState((prevState) => ({
+        bars: prevState.bars.map((bar, index, array) => ({
+          ...bar,
+          filling:
+            index === array.length - 1
+              ? array[0].filling
+              : array[index + 1].filling,
+        })),
+      }));
+    }, 10000); // Change interval time as needed
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    const { bars } = this.state;
+
+    return (
+      <Section>
+        <ProgressBars>
+          {bars.map((bar) => (
+            <Button key={bar.id}>
+              <GradientDiv filling={bar.filling} />
+            </Button>
+          ))}
+        </ProgressBars>
+      </Section>
+    );
+  }
+}
 
 export default ThirdPage;

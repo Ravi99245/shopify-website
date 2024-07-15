@@ -78,6 +78,9 @@ const Home = () => (
     <div>
       <SecondPage />
     </div>
+    <div>
+      <ThirdPage />
+    </div>
   </div>
 );
 

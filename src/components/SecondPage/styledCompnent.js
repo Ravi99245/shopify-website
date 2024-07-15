@@ -1,6 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-import { FaArrowRightLong } from "react-icons/fa6";
+import styled from "styled-components";
 
 export const Globe = styled.img`
   width: 40%;
