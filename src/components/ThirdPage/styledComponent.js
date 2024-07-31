@@ -1,4 +1,24 @@
 import styled, { keyframes } from "styled-components";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+export const Arrow = styled(FaArrowRightLong)`
+  margin-left: 8px;
+  animation: ${slideIn} 0.3s forwards;
+  margin-top: 3px;
+  width: 15px;
+  height: 15px;
+`;
 
 const fillAnimation = keyframes`
   0% { width: 0%; }
@@ -96,8 +116,21 @@ export const Heading = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  color: #848586;
+  color: #000000;
   font-size: 18px;
   width: 95%;
   line-height: 1.5rem;
+`;
+
+export const AnchorElement = styled.a`
+  color: #000;
+  display: flex;
+  align-items: center;
+`;
+
+export const SpanElement = styled.span`
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #616a6b;
 `;
