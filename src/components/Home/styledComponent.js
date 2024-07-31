@@ -255,3 +255,10 @@ export const PlayContianer = styled.a`
 export const DetaialsContainer = styled.div`
   width: 100%;
 `;
+
+export const ThirdPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;

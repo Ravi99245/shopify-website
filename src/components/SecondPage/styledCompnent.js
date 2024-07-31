@@ -1,4 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+export const Arrow = styled(FaArrowRightLong)`
+  margin-left: 5px;
+  animation: ${slideIn} 0.3s forwards;
+  margin-bottom: 2px;
+`;
 
 export const Globe = styled.img`
   width: 40%;
@@ -99,6 +117,7 @@ export const AnchorElement = styled.a`
   padding: 18px;
   text-decoration: none;
   padding-bottom: 16px;
+  position: relative;
 `;
 
 export const LinksContainer = styled.div`

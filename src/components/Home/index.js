@@ -17,6 +17,7 @@ import {
   StoryContainer,
   PlayContianer,
   DetaialsContainer,
+  ThirdPageContainer,
 } from "./styledComponent";
 
 const Home = () => (
@@ -78,9 +79,9 @@ const Home = () => (
     <div>
       <SecondPage />
     </div>
-    <div>
+    <ThirdPageContainer>
       <ThirdPage />
-    </div>
+    </ThirdPageContainer>
   </div>
 );
 

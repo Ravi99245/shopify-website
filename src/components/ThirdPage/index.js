@@ -1,6 +1,15 @@
 import { Component } from "react";
 
-import { Section, GradientDiv, Button, ProgressBars } from "./styledComponent";
+import {
+  Section,
+  GradientDiv,
+  Button,
+  ProgressBars,
+  AnchorContainer,
+  Container,
+  Heading,
+  Paragraph,
+} from "./styledComponent";
 
 class ThirdPage extends Component {
   state = {
@@ -41,6 +50,39 @@ class ThirdPage extends Component {
             </Button>
           ))}
         </ProgressBars>
+        <AnchorContainer>
+          {[
+            {
+              id: 1,
+              heading: "Build an online storefront",
+              paragraph:
+                "Bring your vision to life with our drag-and-drop store creator. No coding expertise required — just your next big idea.",
+              anchor: "Online Store Builder",
+            },
+            {
+              id: 2,
+              heading: "Craft the brand you want",
+              paragraph:
+                "Select from customizable templates created by a community of world-class designers.",
+              anchor: "Theme Store",
+            },
+            {
+              id: 3,
+              heading: "Level up with apps",
+              paragraph:
+                "Add more features and functionality to your online store with apps built by trusted Shopify developers.",
+              anchor: "Shopify App Store",
+            },
+          ].map(({ id, heading, paragraph, anchor }) => (
+            <Container>
+              <Heading>{heading}</Heading>
+              <Paragraph>{paragraph}</Paragraph>
+              <a href="null">
+                <span>{anchor}</span>
+              </a>
+            </Container>
+          ))}
+        </AnchorContainer>
       </Section>
     );
   }

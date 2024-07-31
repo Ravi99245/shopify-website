@@ -11,9 +11,13 @@ const emptyAnimation = keyframes`
 `;
 
 export const Section = styled.section`
-  width: 100%;
+  width: 85%;
   height: auto;
-  padding: 3rem;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Video = styled.video`
@@ -50,13 +54,13 @@ export const Button = styled.button`
 `;
 
 export const ProgressBars = styled.div`
-  width: 75%;
-
+  width: 100%;
   @media (min-width: 768px) {
     width: 100%;
   }
-
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   gap: var(
     --gutter,
@@ -64,4 +68,36 @@ export const ProgressBars = styled.div`
   ); /* Replace '1rem' with the actual gutter value if it's defined in your project */
   margin-top: 1.75rem; /* 28px */
   margin-bottom: 1.25rem; /* 20px */
+`;
+
+export const AnchorContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--gutter, 1rem);
+`;
+
+export const Container = styled.div`
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  height: auto;
+`;
+
+export const Heading = styled.h1`
+  color: #616a6b;
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+`;
+
+export const Paragraph = styled.p`
+  color: #848586;
+  font-size: 18px;
+  width: 95%;
+  line-height: 1.5rem;
 `;
