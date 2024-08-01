@@ -53,6 +53,7 @@ export const GradientDiv = styled.div`
   z-index: 20;
   height: 100%;
   width: 100%;
+
   background: linear-gradient(
     to right,
     #60e7fc,

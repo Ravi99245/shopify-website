@@ -262,5 +262,15 @@ export const ThirdPageContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   background-color: #fafcfd;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+`;
+
+export const FourthPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  background-color: #fff;
 `;

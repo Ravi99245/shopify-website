@@ -17,7 +17,7 @@ export const HeaderComponent = styled.header`
   padding: 0 3rem;
   align-items: center;
   position: fixed;
-  z-index: 100;
+  z-index: 200;
   justify-content: space-evenly;
   background: ${(props) =>
     props.headerBg === "transparent" ? "transparent" : "#000"};

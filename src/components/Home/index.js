@@ -1,6 +1,7 @@
 import Header from "../Header";
 import SecondPage from "../SecondPage/index";
 import ThirdPage from "../ThirdPage/index";
+import FourthPage from "../FouthPage/index";
 import { FaPlay } from "react-icons/fa";
 
 import {
@@ -18,6 +19,7 @@ import {
   PlayContianer,
   DetaialsContainer,
   ThirdPageContainer,
+  FourthPageContainer,
 } from "./styledComponent";
 
 const Home = () => (
@@ -82,6 +84,9 @@ const Home = () => (
     <ThirdPageContainer>
       <ThirdPage />
     </ThirdPageContainer>
+    <FourthPageContainer>
+      <FourthPage />
+    </FourthPageContainer>
   </div>
 );
 
