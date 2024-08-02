@@ -14,7 +14,6 @@ import {
   StyledContainer,
   StyledImage,
   Line,
-  StyledVideo,
 } from "./styledComponent";
 
 class FourthPage extends Component {
@@ -81,22 +80,6 @@ class FourthPage extends Component {
             alt="Marketing - Connect with customers in person"
           />
         </StyledContainer>
-        <div>
-          <StyledVideo
-            id="wistia_simple_video_236"
-            crossorigin="anonymous"
-            poster="https://fast.wistia.com/assets/images/blank.gif"
-            aria-label="Video"
-            src="https://www.shopify.com/431ae521-b392-4eb4-bd44-850dc6ad9a06.mp4"
-            controlslist="nodownload"
-            playsinline=""
-            muted="muted"
-            loop=""
-            preload="auto"
-            type="video/m3u8"
-            x-webkit-airplay="allow"
-          ></StyledVideo>
-        </div>
       </Section>
     );
   }

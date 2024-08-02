@@ -273,4 +273,5 @@ export const FourthPageContainer = styled.div`
   justify-content: flex-start;
   margin-top: 4rem;
   background-color: #fff;
+  margin-bottom: 3rem;
 `;
