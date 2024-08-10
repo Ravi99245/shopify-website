@@ -2,6 +2,20 @@ import styled, { keyframes } from "styled-components";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FiHash } from "react-icons/fi";
+import { FaAt } from "react-icons/fa6";
+import { SiGoogleanalytics } from "react-icons/si";
+
+export const Data = styled(SiGoogleanalytics)`
+  color: #ff5733;
+  width: 20px;
+  height: 20px;
+`;
+
+export const At = styled(FaAt)`
+  color: #5383d7;
+  width: 20px;
+  height: 20px;
+`;
 
 export const Hashtag = styled(FiHash)`
   color: #944bfd;
@@ -157,8 +171,52 @@ export const IconContianer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  margin-top: 0.8rem;
+  margin-right: 0.8rem;
 `;
 
 export const DetaialsContainer = styled.div`
   width: 45%;
+`;
+
+export const VidoeDetailContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+`;
+
+export const Heading2 = styled.h1`
+  color: #000;
+  font-size: 30px;
+  margin-top: 1rem;
+  font-weight: 500;
+`;
+
+export const GradientDiv = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+  background-color: ${(props) =>
+    props.playing ? "#080707" : "#ccd1d1"}; /* Assuming currant is #ff0050 */
+  animation: ${({ playing }) => (playing ? fillAnimation : "")} 10s ease
+    forwards;
+  transition-duration: 9920ms;
+`;
+
+const fillAnimation = keyframes`
+  0% { width: 0%; }
+  100% { width: 100%; }
+`;
+
+export const Button = styled.button`
+  position: relative;
+  height: 0.125rem; /* 2px */
+  width: 100%; /* Replace with actual color value for bg-shade-20 */
+  border: none;
 `;

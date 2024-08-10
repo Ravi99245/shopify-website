@@ -24,10 +24,6 @@ class ThirdPage extends Component {
     ],
   };
 
-  handleMouseEnter = (id) => this.setState({ hoverId: id });
-
-  handleMouseLeave = () => this.setState({ hoverId: null });
-
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState((prevState) => ({
