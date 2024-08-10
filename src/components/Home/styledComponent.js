@@ -275,3 +275,13 @@ export const FourthPageContainer = styled.div`
   background-color: #fff;
   margin-bottom: 3rem;
 `;
+
+export const SixthPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  background-color: #f9fafa;
+  margin-bottom: 3rem;
+`;

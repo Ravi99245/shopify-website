@@ -59,22 +59,6 @@ class FifthPage extends Component {
             loading="lazy"
           />
         </DescriptionContainer>
-        <p>
-          <a href="https://www.shopify.com?wvideo=7k3ste5yaj">
-            <video controls autoPlay loop>
-              <source
-                src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722582554/social_campaign_p0x8xa.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </a>
-        </p>
-        <p>
-          <a href="https://www.shopify.com?wvideo=7k3ste5yaj">
-            Start and grow your e-commerce business - 3-Day Free Trial - Shopify
-          </a>
-        </p>
       </Section>
     );
   }
