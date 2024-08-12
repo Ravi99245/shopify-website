@@ -176,7 +176,7 @@ export const IconContianer = styled.div`
 `;
 
 export const DetaialsContainer = styled.div`
-  width: 45%;
+  width: auto;
 `;
 
 export const VidoeDetailContainer = styled.div`
@@ -184,6 +184,9 @@ export const VidoeDetailContainer = styled.div`
   flex-direction: row;
   align-items: flex-start;
   text-align: left;
+  width: 90%;
+  cursor: pointer;
+  outline: none;
 `;
 
 export const Heading2 = styled.h1`
@@ -204,9 +207,8 @@ export const GradientDiv = styled.div`
   width: 100%;
   background-color: ${(props) =>
     props.playing ? "#080707" : "#ccd1d1"}; /* Assuming currant is #ff0050 */
-  animation: ${({ playing }) => (playing ? fillAnimation : "")} 10s ease
-    forwards;
-  transition-duration: 9920ms;
+  animation: ${({ playing }) => (playing ? fillAnimation : "")}
+    ${(props) => props.time + "s"} ease forwards;
 `;
 
 const fillAnimation = keyframes`
@@ -219,4 +221,42 @@ export const Button = styled.button`
   height: 0.125rem; /* 2px */
   width: 100%; /* Replace with actual color value for bg-shade-20 */
   border: none;
+`;
+
+export const VideoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const GradientContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+export const VideoItemContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+`;
+
+export const VideoComponent = styled.video`
+  width: 60%;
+  height: 100%;
+`;
+
+export const PlayButton = styled.button`
+  position: absolute;
+  top: 100%;
+  bottom: 0%;
+  border: none;
+  border-radius: 5px;
+  z-index: 100;
 `;

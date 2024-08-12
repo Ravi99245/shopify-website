@@ -60,7 +60,6 @@ export const GradientDiv = styled.div`
     #a9eeff,
     #80d1fe
   ); /* Assuming currant is #ff0050 */
-
   animation: ${({ filling }) => (filling ? fillAnimation : emptyAnimation)} 10s
     ease forwards;
   transition-duration: 9920ms;
