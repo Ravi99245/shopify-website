@@ -26,8 +26,40 @@ import {
   GradientContainer,
   VideoComponent,
   VideoItemContainer,
-  PlayButton,
 } from "./styledComponent";
+
+const video1 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722582554/social_campaign_p0x8xa.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const video2 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1723268256/digitalVideo_mziget.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const video3 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722596336/7578614-uhd_2160_4096_25fps_cptimm.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const videoMapping = {
+  1: video1,
+  2: video2,
+  3: video3,
+};
 
 class VideoPage extends Component {
   constructor(props) {
@@ -44,6 +76,7 @@ class VideoPage extends Component {
           symbol: <Hashtag />,
           heading: "Reach new Leads",
           time: 21,
+
           videoUrl:
             "https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722582554/social_campaign_p0x8xa.mp4",
           paragraph:
@@ -73,12 +106,16 @@ class VideoPage extends Component {
         },
       ],
     };
-
-    this.videoRef = React.createRef();
   }
 
-  udpateVidoeUrl = (video) => {
-    this.setState({ url: video });
+  udpateVidoeUrl = (id) => {
+    this.setState((prevState) => ({
+      bars: prevState.bars.map((bar) =>
+        bar.id === id
+          ? { ...bar, playing: !bar.playing }
+          : { ...bar, playing: false }
+      ),
+    }));
   };
 
   updateInterval = () => {
@@ -123,26 +160,6 @@ class VideoPage extends Component {
     clearInterval(this.interval);
   }
 
-  componentDidUpdate(prevProps) {
-    // Check if the video URL has changed
-    if (prevProps.url !== this.props.url) {
-      // Access the video element
-      const videoElement = this.videoRef.current;
-
-      if (videoElement) {
-        // Pause the video
-        videoElement.pause();
-        // Clear the video source
-        videoElement.src = "";
-        // Set the new source
-        videoElement.src = this.props.url;
-        // Reload and play the video
-        videoElement.load();
-        videoElement.play();
-      }
-    }
-  }
-
   handleMouseEneter = () => {
     this.setState({ arrow1: true, arrow2: false });
   };
@@ -162,8 +179,8 @@ class VideoPage extends Component {
   };
 
   render() {
-    const { arrow1, arrow2, bars, url } = this.state;
-    console.log(url);
+    const { arrow1, arrow2, bars } = this.state;
+
     return (
       <Section>
         <TopContainer>
@@ -192,7 +209,7 @@ class VideoPage extends Component {
               ({ id, symbol, playing, heading, paragraph, videoUrl, time }) => (
                 <VidoeDetailContainer
                   key={id}
-                  onClick={() => this.udpateVidoeUrl(videoUrl)}
+                  onClick={() => this.udpateVidoeUrl(id)}
                 >
                   <IconContianer>
                     <InnerContainer>{symbol}</InnerContainer>
@@ -209,9 +226,10 @@ class VideoPage extends Component {
             )}
           </GradientContainer>
           <VideoItemContainer>
-            <VideoComponent ref={this.videoRef} autoPlay controls loop>
-              <source src={url} type="video/mp4" />
-            </VideoComponent>
+            {bars.map(({ id, playing }) => {
+              const VideoFunction = videoMapping[id];
+              return playing && <div key={id}>{VideoFunction()}</div>;
+            })}
           </VideoItemContainer>
         </VideoContainer>
       </Section>
