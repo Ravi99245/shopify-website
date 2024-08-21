@@ -256,28 +256,6 @@ export const PlayButton = styled.button`
   z-index: 100;
 `;
 
-const zoomIn = keyframes`
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
-
-const slideInFromTop = keyframes`
-  from {
-    transform: translateX(-100%) translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) translateY(0);
-    opacity: 1;
-  }
-`;
-
 const zoomInFromCenter = keyframes`
   from {
     transform: scale(0) translateY(0);
@@ -292,5 +270,5 @@ const zoomInFromCenter = keyframes`
 export const VideoComponent = styled.video`
   width: 60%;
   height: 100%;
-  animation: ${zoomInFromCenter} 3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation: ${zoomInFromCenter} 3s cubic-bezier(0.37, 0.01, 0.63, 1);
 `;

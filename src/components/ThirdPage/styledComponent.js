@@ -54,15 +54,12 @@ export const GradientDiv = styled.div`
   height: 100%;
   width: 100%;
 
-  background: linear-gradient(
-    to right,
-    #60e7fc,
-    #a9eeff,
-    #80d1fe
-  ); /* Assuming currant is #ff0050 */
-  animation: ${({ filling }) => (filling ? fillAnimation : emptyAnimation)} 10s
-    ease forwards;
-  transition-duration: 9920ms;
+  background: ${({ playing }) =>
+    playing
+      ? "linear-gradient(to right, #60e7fc, #a9eeff,#80d1fe)"
+      : "#f2f4f4"}; /* Assuming currant is #ff0050 */
+  animation: ${({ playing }) => (playing ? fillAnimation : "")}
+    ${(props) => props.time + "s"} ease forwards;
 `;
 
 export const Button = styled.button`
@@ -105,6 +102,8 @@ export const Container = styled.div`
   align-items: flex-start;
   text-align: left;
   height: auto;
+  cursor: pointer;
+  outline: none;
 `;
 
 export const Heading = styled.h1`
@@ -132,4 +131,38 @@ export const SpanElement = styled.span`
   align-items: center;
   font-weight: 600;
   color: #616a6b;
+`;
+
+const zoomInFromCenter = keyframes`
+  from {
+    transform: scale(0) translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+`;
+
+export const VideoComponent = styled.video`
+  width: 65%;
+  height: 378px;
+  animation: ${zoomInFromCenter} 3s smooth;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+`;
+
+export const VideoItemContainer = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
+export const VideoContainer = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
+export const VideoItem = styled.div`
+  width: 100%;
+  height: auto;
 `;

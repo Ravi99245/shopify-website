@@ -12,56 +12,135 @@ import {
   AnchorElement,
   Arrow,
   SpanElement,
+  VideoComponent,
+  VideoItemContainer,
+  VideoContainer,
+  VideoItem,
 } from "./styledComponent";
+
+const video1 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1724220660/shopping_technology_nevt5u.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const video2 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1724220508/customizes_templates_dki8vm.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const video3 = () => (
+  <VideoComponent autoPlay loop>
+    <source
+      src="https://res.cloudinary.com/dxa4rbmrj/video/upload/v1724220454/Shpify_apps_tubdja.mp4"
+      type="video/mp4"
+    />
+  </VideoComponent>
+);
+
+const videoMapping = {
+  1: video1,
+  2: video2,
+  3: video3,
+};
 
 class ThirdPage extends Component {
   state = {
     hoverId: null,
+    duration: 21 * 1000,
     bars: [
-      { id: 1, filling: true },
-      { id: 2, filling: false },
-      { id: 3, filling: false },
+      { id: 1, playing: false, time: 11 },
+      { id: 2, playing: true, time: 19 },
+      { id: 3, playing: false, time: 12 },
     ],
   };
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState((prevState) => ({
-        bars: prevState.bars.map((bar, index, array) => ({
-          ...bar,
-          filling:
-            index === array.length - 1
-              ? array[0].filling
-              : array[index + 1].filling,
-        })),
-      }));
-    }, 10000); // Change interval time as needed
+  updateInterval = () => {
+    this.setState((prevState) => {
+      // Reset all bars to not playing
+      const bars = prevState.bars.map((bar) => ({ ...bar, playing: false }));
+
+      // Find the current playing bar
+      const currentPlayingIndex = prevState.bars.findIndex(
+        (bar) => bar.playing
+      );
+
+      // Determine the next index
+      const nextPlayingIndex =
+        currentPlayingIndex === prevState.bars.length - 1
+          ? 0
+          : currentPlayingIndex + 1;
+
+      // Set the next bar to playing
+      bars[nextPlayingIndex].playing = true;
+
+      // Calculate the new video URL and duration
+
+      const duration = bars[nextPlayingIndex].time * 1000; // Default to 10 seconds if `time` is undefined
+
+      // Clear and reset the interval with the new duration
+      clearInterval(this.interval);
+      this.interval = setInterval(this.updateInterval, duration);
+
+      return { bars, duration };
+    });
+  };
+
+  componentDidMount(prevProps) {
+    this.updateInterval();
+
+    // Initialize the interval
+    this.interval = setInterval(this.updateInterval, this.state.duration); // Default duration if undefined
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
+  udpateVidoeUrl = (id) => {
+    this.setState((prevState) => ({
+      bars: prevState.bars.map((bar) =>
+        bar.id === id
+          ? { ...bar, playing: !bar.playing }
+          : { ...bar, playing: false }
+      ),
+    }));
+  };
+
+  handleMouseEnter = (id) => {
+    this.setState({ hoverId: id });
+  };
+
+  handleMouseLeave = () => {
+    this.setState({ hoverId: null });
+  };
+
   render() {
     const { bars, hoverId } = this.state;
 
     return (
       <Section>
-        <div>
-          <div class="w-css-reset">
-            <img
-              class="w-css-reset"
-              srcset="https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=640x276 320w, 
-              https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=640x276 640w, https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=960x413 960w, https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=1280x551 1280w, https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=1920x827 1920w, https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=1920x827 3840w"
-              src="https://embed-ssl.wistia.com/deliveries/d1de6590f4f55c80da421d3b27bad5f8.webp?image_crop_resized=1920x827"
-              alt="Shopify apps icons"
-            />
-          </div>
-        </div>
+        <VideoContainer>
+          <VideoItemContainer>
+            {bars.map(({ id, playing }) => {
+              const VideoFunction = videoMapping[id];
+              return (
+                playing && <VideoItem key={id}>{VideoFunction()}</VideoItem>
+              );
+            })}
+          </VideoItemContainer>
+        </VideoContainer>
         <ProgressBars>
           {bars.map((bar) => (
-            <Button key={bar.id}>
-              <GradientDiv filling={bar.filling} />
+            <Button key={bar.id} onClick={() => this.udpateVidoeUrl(bar.id)}>
+              <GradientDiv playing={bar.playing} time={bar.time} />
             </Button>
           ))}
         </ProgressBars>
@@ -93,7 +172,7 @@ class ThirdPage extends Component {
               href: "https://apps.shopify.com/",
             },
           ].map(({ id, heading, paragraph, anchor, href }) => (
-            <Container>
+            <Container onClick={() => this.udpateVidoeUrl(id)}>
               <Heading>{heading}</Heading>
               <Paragraph>{paragraph}</Paragraph>
               <AnchorElement

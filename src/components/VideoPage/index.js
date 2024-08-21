@@ -72,24 +72,19 @@ class VideoPage extends Component {
       bars: [
         {
           id: 1,
-          playing: true,
+          playing: false,
           symbol: <Hashtag />,
           heading: "Reach new Leads",
           time: 21,
-
-          videoUrl:
-            "https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722582554/social_campaign_p0x8xa.mp4",
           paragraph:
             "Find new shoppers with SEO, social media, and content marketingtools that help you reach customers where they are.",
         },
         {
           id: 2,
-          playing: false,
+          playing: true,
           symbol: <At />,
           heading: "Enguage with customers",
           time: 10,
-          videoUrl:
-            "https://res.cloudinary.com/dxa4rbmrj/video/upload/v1723268256/digitalVideo_mziget.mp4",
           paragraph:
             "Build custom eamil campaigns, set automations serve everysegment, and connect with customers on the go with integrated messaging tool.",
         },
@@ -99,8 +94,6 @@ class VideoPage extends Component {
           symbol: <Data />,
           heading: "Data you can build on",
           time: 25,
-          videoUrl:
-            "https://res.cloudinary.com/dxa4rbmrj/video/upload/v1722596336/7578614-uhd_2160_4096_25fps_cptimm.mp4",
           paragraph:
             "Take control of your customer data to build custom audiences and explore the customer insights that drive ongoing growth.",
         },
@@ -138,14 +131,14 @@ class VideoPage extends Component {
       bars[nextPlayingIndex].playing = true;
 
       // Calculate the new video URL and duration
-      const video = bars[nextPlayingIndex].videoUrl;
+
       const duration = bars[nextPlayingIndex].time * 1000; // Default to 10 seconds if `time` is undefined
 
       // Clear and reset the interval with the new duration
       clearInterval(this.interval);
       this.interval = setInterval(this.updateInterval, duration);
 
-      return { bars, url: video, duration };
+      return { bars, duration };
     });
   };
 
@@ -168,19 +161,9 @@ class VideoPage extends Component {
     this.setState({ arrow1: false, arrow2: true });
   };
 
-  handlePlayPause = () => {
-    // Access the video element using the ref
-    const video = this.videoRef.current;
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  };
-
   render() {
     const { arrow1, arrow2, bars } = this.state;
-
+    console.log(bars);
     return (
       <Section>
         <TopContainer>
