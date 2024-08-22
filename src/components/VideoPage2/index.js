@@ -74,28 +74,28 @@ class VideoPage extends Component {
           id: 1,
           playing: false,
           symbol: <Hashtag />,
-          heading: "Reach new Leads",
+          heading: "Oversee your operations",
           time: 21,
           paragraph:
-            "Find new shoppers with SEO, social media, and content marketingtools that help you reach customers where they are.",
+            "Manage inventory, track payments, and view real-timebusiness insights -- all in one place, so you can focus on buliding your business",
         },
         {
           id: 2,
           playing: true,
           symbol: <At />,
-          heading: "Enguage with customers",
+          heading: "Fulfill every order",
           time: 10,
           paragraph:
-            "Build custom eamil campaigns, set automations serve everysegment, and connect with customers on the go with integrated messaging tool.",
+            "Get your products where they need to be with integreated inventory management, streamlined returns, and dedicated shipping and fulfillment network.",
         },
         {
           id: 3,
           playing: false,
           symbol: <Data />,
-          heading: "Data you can build on",
+          heading: "Manage your money where you make it",
           time: 25,
           paragraph:
-            "Take control of your customer data to build custom audiences and explore the customer insights that drive ongoing growth.",
+            "Manage your business finances all from one place with money management and flexible funding designed with entreprenueurs in mind.",
         },
       ],
     };
@@ -167,9 +167,9 @@ class VideoPage extends Component {
     return (
       <Section>
         <TopContainer>
-          <Paragraph>BUILT-IN MARKETING TOOLS</Paragraph>
+          <Paragraph>CENTRALIZED BUSINESS OPERATIONS</Paragraph>
           <HeadingContianer>
-            <Heading>From first touch to full funnel</Heading>
+            <Heading>Streamline your back office</Heading>
             <AnchorContianer>
               <Anchor
                 href="https://www.shopify.com/pos"
@@ -178,7 +178,7 @@ class VideoPage extends Component {
               >
                 <ArrowContainer>
                   <Arrow1 arrow1={arrow1} />
-                  <span>Leverage our full marketing suite</span>
+                  <span>Manage your business</span>
                 </ArrowContainer>
                 <Arrow2 arrow2={arrow2} />
               </Anchor>
@@ -188,26 +188,24 @@ class VideoPage extends Component {
         </TopContainer>
         <VideoContainer>
           <GradientContainer>
-            {bars.map(
-              ({ id, symbol, playing, heading, paragraph, videoUrl, time }) => (
-                <VidoeDetailContainer
-                  key={id}
-                  playing={playing}
-                  onClick={() => this.udpateVidoeUrl(id)}
-                >
-                  <IconContianer>
-                    <InnerContainer>{symbol}</InnerContainer>
-                  </IconContianer>
-                  <DetaialsContainer>
-                    <Heading2>{heading}</Heading2>
-                    <p>{paragraph}</p>
-                    <Button key={id}>
-                      <GradientDiv playing={playing} time={time} />
-                    </Button>
-                  </DetaialsContainer>
-                </VidoeDetailContainer>
-              )
-            )}
+            {bars.map(({ id, symbol, playing, heading, paragraph, time }) => (
+              <VidoeDetailContainer
+                key={id}
+                playing={playing}
+                onClick={() => this.udpateVidoeUrl(id)}
+              >
+                <IconContianer>
+                  <InnerContainer>{symbol}</InnerContainer>
+                </IconContianer>
+                <DetaialsContainer>
+                  <Heading2>{heading}</Heading2>
+                  <p>{paragraph}</p>
+                  <Button key={id}>
+                    <GradientDiv playing={playing} time={time} />
+                  </Button>
+                </DetaialsContainer>
+              </VidoeDetailContainer>
+            ))}
           </GradientContainer>
           <VideoItemContainer>
             {bars.map(({ id, playing }) => {

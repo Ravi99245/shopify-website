@@ -1,5 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+import { FaArrowRightLong } from "react-icons/fa6";
+
+export const Arrow1 = styled(FaArrowRightLong)`
+  margin-right: 0px;
+  margin-top: 5px;
+  width: 22px;
+  height: 22px;
+`;
 export const Section = styled.section`
   margin-bottom: 10px;
   padding-top: var(--global-header);
@@ -284,4 +292,49 @@ export const SixthPageContainer = styled.div`
   margin-top: 4rem;
   background-color: #f9fafa;
   margin-bottom: 3rem;
+`;
+
+export const SeventhPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  background-color: #f9fafa;
+  margin-bottom: 3rem;
+`;
+
+const marquee = keyframes`
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+`;
+
+// Create a styled component for the marquee container
+export const MarqueeContainer = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(to right, #2ff0c4, #c9f540, #d056f4);
+  margin-bottom: 15px;
+  height: 14vh;
+  width: auto;
+  cursor: pointer;
+`;
+
+export const MarqueeText = styled.div`
+  display: flex;
+  padding-left: 10%;
+  animation: ${marquee} 25s linear infinite;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 140%;
+  height: 100%;
+`;
+
+export const AnchorElement = styled.a`
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  margin-right: 15px;
 `;

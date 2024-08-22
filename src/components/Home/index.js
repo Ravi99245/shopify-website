@@ -4,6 +4,7 @@ import ThirdPage from "../ThirdPage/index";
 import FourthPage from "../FouthPage/index";
 import FifthPage from "../FifthPage/index";
 import VideoPage from "../VideoPage/index";
+import VideoPage2 from "../VideoPage2/index";
 import { FaPlay } from "react-icons/fa";
 
 import {
@@ -23,6 +24,11 @@ import {
   ThirdPageContainer,
   FourthPageContainer,
   SixthPageContainer,
+  SeventhPageContainer,
+  MarqueeContainer,
+  MarqueeText,
+  Arrow1,
+  AnchorElement,
 } from "./styledComponent";
 
 const Home = () => (
@@ -96,6 +102,37 @@ const Home = () => (
     <SixthPageContainer>
       <VideoPage />
     </SixthPageContainer>
+    <SeventhPageContainer>
+      <VideoPage2 />
+    </SeventhPageContainer>
+    <MarqueeContainer>
+      <MarqueeText>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+        <AnchorElement href="https://accounts.shopify.com/store-create?language=en&locale=en&signup_page=https%3A%2F%2Fwww.shopify.com%2F&signup_types%5B%5D=paid_trial_experience&signup_types%5B%5D=gmv_rw_myub&_y=73f7b28b-a67c-455f-9efc-e50fd0e351b7&_s=db1580f8-4380-4759-9f74-524131967e96&_p=d2c0f2b1-08ac-4132-ab86-16aced039387">
+          START YOUR FREE STYLE <Arrow1 />
+        </AnchorElement>
+      </MarqueeText>
+    </MarqueeContainer>
   </div>
 );
 

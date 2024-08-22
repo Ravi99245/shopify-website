@@ -1,23 +1,23 @@
 import styled, { keyframes } from "styled-components";
 
 import { FaArrowRightLong } from "react-icons/fa6";
-import { FiHash } from "react-icons/fi";
-import { FaAt } from "react-icons/fa6";
-import { SiGoogleanalytics } from "react-icons/si";
+import { MdOutlineAnalytics } from "react-icons/md";
+import { TbCubeSend } from "react-icons/tb";
+import { GrHome } from "react-icons/gr";
 
-export const Data = styled(SiGoogleanalytics)`
+export const Data = styled(GrHome)`
   color: #ff5733;
   width: 20px;
   height: 20px;
 `;
 
-export const At = styled(FaAt)`
+export const At = styled(TbCubeSend)`
   color: #5383d7;
   width: 20px;
   height: 20px;
 `;
 
-export const Hashtag = styled(FiHash)`
+export const Hashtag = styled(MdOutlineAnalytics)`
   color: #944bfd;
   width: 20px;
   height: 20px;
@@ -187,13 +187,18 @@ export const VidoeDetailContainer = styled.div`
   width: 90%;
   cursor: pointer;
   outline: none;
+  margin-top: 10px;
   color: ${(props) => (props.playing ? "#000" : "#616a6b")};
 `;
 
 export const Heading2 = styled.h1`
-  font-size: 30px;
+  font-size: 27px;
   margin-top: 1rem;
   font-weight: 500;
+`;
+
+export const Paragraph1 = styled.div`
+  columns: "#000";
 `;
 
 export const GradientDiv = styled.div`
@@ -225,7 +230,7 @@ export const Button = styled.button`
 
 export const VideoContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
