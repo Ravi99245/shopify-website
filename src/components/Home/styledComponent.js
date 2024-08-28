@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export const Arrow1 = styled(FaArrowRightLong)`
-  margin-right: 0px;
+  margin-left: 25px;
   margin-top: 5px;
   width: 22px;
   height: 22px;
@@ -304,6 +304,15 @@ export const SeventhPageContainer = styled.div`
   margin-bottom: 3rem;
 `;
 
+export const LastPageContianer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+  background-color: #f7f8ff;
+`;
+
 const marquee = keyframes`
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0%); }
@@ -318,6 +327,7 @@ export const MarqueeContainer = styled.div`
   height: 14vh;
   width: auto;
   cursor: pointer;
+  margin-bottom: 0px;
 `;
 
 export const MarqueeText = styled.div`
@@ -336,5 +346,5 @@ export const AnchorElement = styled.a`
   text-decoration: none;
   font-size: 25px;
   font-weight: 600;
-  margin-right: 15px;
+  margin-right: 30px;
 `;

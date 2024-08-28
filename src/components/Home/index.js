@@ -5,6 +5,7 @@ import FourthPage from "../FouthPage/index";
 import FifthPage from "../FifthPage/index";
 import VideoPage from "../VideoPage/index";
 import VideoPage2 from "../VideoPage2/index";
+import LastPage from "../LastPage/index";
 import { FaPlay } from "react-icons/fa";
 
 import {
@@ -29,6 +30,7 @@ import {
   MarqueeText,
   Arrow1,
   AnchorElement,
+  LastPageContianer,
 } from "./styledComponent";
 
 const Home = () => (
@@ -133,6 +135,9 @@ const Home = () => (
         </AnchorElement>
       </MarqueeText>
     </MarqueeContainer>
+    <LastPageContianer>
+      <LastPage />
+    </LastPageContianer>
   </div>
 );
 
