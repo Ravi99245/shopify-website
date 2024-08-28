@@ -305,12 +305,13 @@ export const SeventhPageContainer = styled.div`
 `;
 
 export const LastPageContianer = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 3rem;
-  background-color: #f7f8ff;
+  background-color: #e9f6fd;
 `;
 
 const marquee = keyframes`
