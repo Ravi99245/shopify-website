@@ -300,7 +300,7 @@ export const SeventhPageContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin-top: 4rem;
-  background-color: #f9fafa;
+  background-color: #ffffff;
   margin-bottom: 3rem;
 `;
 
