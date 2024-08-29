@@ -8,6 +8,10 @@ import {
   Button,
   DetaialsContainer,
   InformationContaner,
+  Right,
+  Left,
+  Company,
+  Owner,
 } from "./styledComponent";
 
 class BottomSection extends Component {
@@ -15,21 +19,21 @@ class BottomSection extends Component {
     images: [
       {
         id: 1,
-        src: "https://res.cloudinary.com/dxa4rbmrj/image/upload/v1724909513/swap-image1_litlzb.webp",
+        src: "https://res.cloudinary.com/dxa4rbmrj/image/upload/v1724909529/swap-image2_bvazvq.webp",
         isBack: true,
         messege:
           "Shopify helped me take something that I put my heart and soul into and share it with people that need it and find it useful.",
         company: "Satya",
-        owner: "Patrice Mousseau — Owner",
+        owner: "Patrice Mousseau",
       },
       {
         id: 2,
-        src: "https://res.cloudinary.com/dxa4rbmrj/image/upload/v1724909529/swap-image2_bvazvq.webp",
+        src: "https://res.cloudinary.com/dxa4rbmrj/image/upload/v1724909513/swap-image1_litlzb.webp",
         isBack: false,
         messege:
           "We went from burning beans in our garage to needing a 10,000 sq. ft facility to meet customer demand.",
         company: "BLK & Bold",
-        owner: "Rod Johnson — Owner",
+        owner: "Rod Johnson ",
       },
     ],
   };
@@ -61,16 +65,22 @@ class BottomSection extends Component {
               <>
                 {image.isBack === false && (
                   <>
-                    <Quote key={image.id}>{image.messege}</Quote>
-                    <p key={image.id}>{image.company}</p>
-                    <p key={image.id}>{image.owner}</p>
+                    <Quote>{image.messege}</Quote>
+                    <Company>{image.company}</Company>
+                    <p>
+                      <Owner>{image.owner}</Owner> — Owner
+                    </p>
                   </>
                 )}
               </>
             ))}
             <div>
-              <Button onClick={this.handlePrevious}>Previous</Button>
-              <Button onClick={this.handleNext}>Next</Button>
+              <Button onClick={this.handlePrevious}>
+                <Left />
+              </Button>
+              <Button onClick={this.handleNext}>
+                <Right />
+              </Button>
             </div>
           </InformationContaner>
           <ImageWrapper>

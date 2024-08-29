@@ -7,6 +7,7 @@ import VideoPage from "../VideoPage/index";
 import VideoPage2 from "../VideoPage2/index";
 import LastPage from "../LastPage/index";
 import BottomSection from "../BottomSection/index";
+import BLogSection from "../BlogSection/index";
 import { FaPlay } from "react-icons/fa";
 
 import {
@@ -32,6 +33,7 @@ import {
   Arrow1,
   AnchorElement,
   LastPageContianer,
+  BlogSectionContinaer,
 } from "./styledComponent";
 
 const Home = () => (
@@ -142,6 +144,9 @@ const Home = () => (
     <SeventhPageContainer>
       <BottomSection />
     </SeventhPageContainer>
+    <BlogSectionContinaer>
+      <BLogSection />
+    </BlogSectionContinaer>
   </div>
 );
 

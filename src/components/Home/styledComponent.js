@@ -314,6 +314,16 @@ export const LastPageContianer = styled.div`
   background-color: #e9f6fd;
 `;
 
+export const BlogSectionContinaer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000;
+  width: 98.6vw;
+`;
+
 const marquee = keyframes`
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0%); }
