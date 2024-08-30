@@ -163,7 +163,6 @@ class VideoPage extends Component {
 
   render() {
     const { arrow1, arrow2, bars } = this.state;
-    console.log(bars);
     return (
       <Section>
         <TopContainer>
