@@ -25,11 +25,6 @@ const fillAnimation = keyframes`
   100% { width: 100%; }
 `;
 
-const emptyAnimation = keyframes`
-  0% { width: 100%; }
-  100% { width: 0%; }
-`;
-
 export const Section = styled.section`
   width: 85%;
   height: auto;
