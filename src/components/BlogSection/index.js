@@ -56,7 +56,7 @@ const BlogSection = () => {
             you run an online business.
           </BlogParagraph>
           <Button type="button" isHovered={isHovered}>
-            Read <Right isHovered={isHovered} />
+            Read <Right key={1} isHovered={isHovered} />
           </Button>
         </AnchorContainer>
         <AnchorContainer

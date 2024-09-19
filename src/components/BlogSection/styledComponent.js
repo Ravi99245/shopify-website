@@ -24,9 +24,11 @@ export const BookIcon = styled(IoMdBook)`
 `;
 
 export const Right = styled(FaAngleRight)`
+  width: 20px;
+  height: 20px;
   position: absolute;
   margin-left: 20px;
-  left: ${(props) => (props.isHovered ? "55px" : "50px")};
+  left: ${(props) => (props.isHovered ? "75px" : "70px")};
   transition: all 0.3s ease;
 `;
 
@@ -163,5 +165,5 @@ export const Button = styled.button`
   transition: background-color 1s ease;
   position: relative;
   overflow: hidden;
-  width: 100px;
+  width: 120px;
 `;
