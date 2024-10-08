@@ -7,6 +7,11 @@ export const Section = styled.section`
   position: relative;
 `;
 
+export const One = styled.div`
+  display: flex;
+
+`
+
 export const Heading = styled.h1`
   font-size: 80px;
   text-align: center;
